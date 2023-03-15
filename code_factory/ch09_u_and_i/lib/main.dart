@@ -1,5 +1,4 @@
 import 'package:ch09_u_and_i/screen/home_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -9,12 +8,12 @@ void main() {
     localizationsDelegates: const [
       GlobalMaterialLocalizations.delegate,
       GlobalWidgetsLocalizations.delegate,
-      DefaultCupertinoLocalizations.delegate,
+      GlobalCupertinoLocalizations.delegate, // 실 기기에서 아래 를 주석처리하고 이 부분을 넣어야 한다.
+      // DefaultCupertinoLocalizations.delegate,
     ],
     supportedLocales: const [
       Locale('ko', 'KR'), // Korean, no Country code
       Locale('en', 'US'), // English
-      // ... other locales the app supports
     ],
     theme: ThemeData(
       fontFamily: 'sunflower',
