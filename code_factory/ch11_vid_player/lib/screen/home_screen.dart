@@ -19,14 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: video == null ? renderEmpty() : renderVideo(),
-    );
-  }
-
   renderEmpty() {
     var now = DateTime.now();
     debugPrint('date: ${DateFormat('mm:ss').format(now)}');
@@ -77,6 +69,14 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     }
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: video == null ? renderEmpty() : renderVideo(),
+    );
+  }
 }
 
 class _Logo extends StatelessWidget {
@@ -94,13 +94,13 @@ class _Logo extends StatelessWidget {
 }
 
 class _AppName extends StatelessWidget {
-  const _AppName();
-
   final textStyle = const TextStyle(
     color: Colors.white,
     fontSize: 30,
     fontWeight: FontWeight.w300,
   );
+
+  const _AppName();
 
   @override
   Widget build(BuildContext context) {
